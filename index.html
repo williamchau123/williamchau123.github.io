@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Developer Portfolio</title>
+</head>
+
+<body>
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+
+  <nav>
+    <div class="container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container fade-in-up">
+        <h1>
+          People know you starting from your <span class="brand-text">website</span>.
+        </h1>
+        <h2>I'm William Chau and I'm here to help you to be known.</h2>
+        <p>
+          Web Developer & UI Designer. Building interfaces that feel fun.
+        </p>
+        <a href="#work" class="cta-button">View Work</a>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <h2 class="fade-in-up" style="font-size: 48px; margin-bottom: 20px; text-align: center;">Selected Projects</h2>
+        <p class="fade-in-up" style="text-align: center; margin-bottom: 60px;">A collection of work that defines my
+          style.</p>
+
+        <div class="bento-grid">
+          <div class="bento-card large fade-in-up">
+            <div class="content">
+              <h3>Regent College</h3>
+              <p><a href="https://www.regent-college.edu">www.regent-college.edu</a></p>
+            </div>
+            <!-- Placeholder for image -->
+            <div style="margin-top: 20px; height: 200px; background: #ffffff; border-radius: 15px;">
+              <img src="./src/assets/Regent.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+          </div>
+
+          <div class="bento-card fade-in-up">
+            <div class="content">
+              <h3>Signado</h3>
+              <p>Real-time translation from ASL to text on screen.</p>
+            </div>
+            <div style="margin-top: 20px; height: 200px; background: #ffffff; border-radius: 15px;">
+              <img src="./src/assets/Signado.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+          </div>
+
+          <div class="bento-card fade-in-up">
+            <div class="content">
+              <h3>ViaPlanner</h3>
+              <p>Sort your timetable automatically.</p>
+            </div>
+            <div
+              style="margin-top: 20px; height: 200px; background: #ffffff; border-radius: 15px; display: flex; flex-direction: row;">
+              <img src="./src/assets/Viaplanner.png" alt="" style="width: 50%; height: 50%; object-fit: contain;">
+              <img src="./src/assets/Timetable.png" alt=""
+                style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container fade-in-up">
+        <div style="background: var(--bg-secondary); border-radius: 30px; padding: 60px; text-align: center;">
+          <h2 style="font-size: 40px; margin-bottom: 20px;">About Me</h2>
+          <p style="max-width: 800px;">
+            I care about who you are and what you want to achieve. I'm here to help you make your vision a reality.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container fade-in-up" style="text-align: center;">
+        <h2 style="font-size: 40px; margin-bottom: 20px;">Let's work together.</h2>
+        <p>Have a project in mind? I'd love to hear from you.</p>
+        <a href="mailto:william.chau715@gmail.com" class="cta-button">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p style="font-size: 12px;">&copy; 2025 William Chau. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

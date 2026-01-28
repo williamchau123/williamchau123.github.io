@@ -1,0 +1,305 @@
+:root {
+  --bg-color: #000000;
+  --bg-secondary: #1d1d1f;
+  --text-primary: #f5f5f7;
+  --text-secondary: #86868b;
+  --brand-color: #fff8c0;
+  --brand-glow: rgba(255, 248, 192, 0.3);
+  --font-main: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --max-width: 1200px;
+  --nav-height: 44px;
+  --transition-speed: 0.6s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  overflow-x: hidden;
+  cursor: none;
+  /* Hide default cursor */
+}
+
+/* Custom Cursor */
+/* Custom Cursor - Inverted Blend */
+.cursor-dot {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  /* White to invert against dark backgrounds */
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  /* The magic sauce */
+  transition: transform 0.15s ease-out;
+  /* Smooth scale only */
+}
+
+/* Hover State */
+body.hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(2.5);
+  background-color: var(--brand-color);
+  /* Optional: tint it on hover */
+  mix-blend-mode: normal;
+  /* Optional: if we want it to pop out, or keep difference */
+}
+
+/* For this specific design, let's keep it simple and elegant with difference mode always,
+   but maybe just scale up. */
+body.hovering .cursor-dot {
+  transform: translate(-50%, -50%) scale(3);
+  mix-blend-mode: difference;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(40px, 8vw, 80px);
+  background: linear-gradient(180deg, #ffffff 0%, #b0b0b0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.brand-text {
+  color: var(--brand-color);
+  -webkit-text-fill-color: var(--brand-color);
+}
+
+p {
+  font-size: 21px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--brand-color);
+}
+
+/* Layout Utilities */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 100px 0;
+  position: relative;
+}
+
+/* Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-height);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+nav a {
+  font-size: 12px;
+  color: #e8e8ed;
+  opacity: 0.8;
+}
+
+nav a:hover {
+  opacity: 1;
+  color: var(--brand-color);
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: var(--nav-height);
+}
+
+.hero h1 {
+  max-width: 800px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--brand-color);
+  background: transparent;
+  border: 2px solid var(--brand-color);
+  border-radius: 30px;
+  text-decoration: none;
+  cursor: none;
+  /* Custom cursor */
+  transition: color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 40px;
+  /* Kept from original for layout */
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--brand-color);
+  /* Start circle at mouse position (set by JS) */
+  clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
+  transition: clip-path 0.3s ease-out;
+  z-index: -1;
+}
+
+.cta-button:hover::before {
+  clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
+}
+
+.cta-button:hover {
+  color: #000;
+  /* Contrast text color */
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--brand-glow);
+}
+
+/* Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  margin-top: 60px;
+}
+
+.bento-card {
+  background: var(--bg-secondary);
+  border-radius: 30px;
+  padding: 30px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  margin: 10px;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(80, 107, 151);
+  /* Subtle Blue Tone */
+  /* Start circle at mouse position */
+  clip-path: circle(0% at var(--x, 50%) var(--y, 50%));
+  transition: clip-path 0.3s ease-out;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bento-card:hover::before {
+  clip-path: circle(150% at var(--x, 50%) var(--y, 50%));
+}
+
+/* Removed old hover scale to avoid conflict, or keep if compatible */
+.bento-card:hover {
+  transform: scale(1.02);
+}
+
+.bento-card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.bento-card p {
+  font-size: 17px;
+  margin: 0;
+  max-width: 100%;
+  color: var(--text-primary);
+}
+
+.bento-card.large {
+  grid-column: span 3;
+}
+
+@media (max-width: 768px) {
+  .bento-card.large {
+    grid-column: span 1;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+/* Footer */
+footer {
+  background: var(--bg-secondary);
+  padding: 60px 0;
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
