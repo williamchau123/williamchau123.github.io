@@ -9,5 +9,5 @@ export default defineConfig({
         outDir: 'dist',
         sourcemap: false
     },
-    base: '/website/',
+    base: '/',
 })
