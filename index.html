@@ -5,6 +5,38 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>William Chau | Web Dev</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    corePlugins: {
+      preflight: false,
+    },
+    theme: {
+      extend: {
+        colors: {
+          'brand': '#fff8c0',
+          'brand-glow': 'rgba(255, 248, 192, 0.3)',
+          'text-primary': '#f5f5f7',
+          'text-secondary': '#86868b',
+          'bg-secondary': '#1d1d1f',
+          'gray-600': '#b0b0b0',
+          'gray-300': '#e8e8ed',
+          'blue-hover': 'rgb(80, 107, 151)',
+        },
+        fontFamily: {
+          main: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Text"', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        },
+        maxWidth: {
+          container: '1200px',
+        },
+        spacing: {
+          nav: '44px',
+        },
+      },
+    },
+  }
+</script>
+<link rel="stylesheet" href="/src/style.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -15,101 +47,101 @@
 <!-- Custom Cursor -->
 <div class="cursor-dot"></div>
 
-<nav>
-  <div class="container">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </div>
+<nav class="h-11">
+<div class="container flex justify-center items-center">
+<ul class="flex gap-8">
+  <li><a href="#home" class="text-xs opacity-80 hover:opacity-100">Home</a></li>
+  <li><a href="#work" class="text-xs opacity-80 hover:opacity-100">Work</a></li>
+  <li><a href="#about" class="text-xs opacity-80 hover:opacity-100">About</a></li>
+  <li><a href="#contact" class="text-xs opacity-80 hover:opacity-100">Contact</a></li>
+</ul>
+</div>
 </nav>
 
 <main>
-  <section id="home" class="hero">
-    <div class="container fade-in-up">
-      <h1>
-        People know you starting from your <span class="brand-text">website</span>.
-      </h1>
-      <h2>I'm William Chau and I'm here to help you to be known.</h2>
-      <p>
-        Web Developer & UI Designer. Building interfaces that feel fun.
-      </p>
-      <a href="#work" class="cta-button">View Work</a>
-    </div>
-  </section>
+<section id="home" class="hero">
+<div class="container fade-in-up">
+  <h1>
+    Crafting the window to your <span class="brand-text">world</span>. 
+  </h1>
+  <h2 class="text-2xl mb-5">I'm William Chau and I'm here to help your vision shine through.</h2>
+  <p>
+    Web Developer & UI Designer. Building interfaces that bring your uniqueness to the digital front.
+  </p>
+  <a href="#work" class="cta-button">View Work</a>
+</div>
+</section>
 
-  <section id="work">
-    <div class="container">
-      <h2 class="fade-in-up" style="font-size: 48px; margin-bottom: 20px; text-align: center;">Selected Projects</h2>
-      <p class="fade-in-up" style="text-align: center; margin-bottom: 60px;">A collection of work that defines my
-        style.</p>
+<section id="work">
+<div class="container">
+  <h2 class="fade-in-up text-5xl mb-5 text-center">Selected Projects</h2>
+  <p class="fade-in-up text-center mb-16">A collection of work that defines my style.</p>
 
-      <div class="bento-grid">
-        <div class="bento-card large fade-in-up">
-          <div class="content">
-            <h3>Regent College</h3>
-            <p><a href="https://www.regent-college.edu">www.regent-college.edu</a></p>
-          </div>
-          <!-- Placeholder for image -->
-          <div style="margin-top: 20px; height: 200px; background: #ffffff; border-radius: 15px;">
-            <img src="./src/assets/Regent.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
-          </div>
-        </div>
-
-        <div class="bento-card fade-in-up">
-          <div class="content">
-            <h3>Signado</h3>
-            <p>Real-time translation from ASL to text on screen.</p>
-          </div>
-          <div style="margin-top: 20px; height: 200px; background: #ffffff; border-radius: 15px;">
-            <img src="./src/assets/Signado.png" alt="" style="width: 100%; height: 100%; object-fit: contain;">
-          </div>
-        </div>
-
-        <div class="bento-card fade-in-up">
-          <div class="content">
-            <h3>ViaPlanner</h3>
-            <p>Sort your timetable automatically.</p>
-          </div>
-          <div
-            style="margin-top: 20px; height: 200px; background: #ffffff; border-radius: 15px; display: flex; flex-direction: row;">
-            <img src="./src/assets/Viaplanner.png" alt="" style="width: 50%; height: 50%; object-fit: contain;">
-            <img src="./src/assets/Timetable.png" alt=""
-              style="width: 100%; height: 100%; object-fit: contain; border-radius: 15px;">
-          </div>
-        </div>
-
-
+  <div class="bento-grid">
+    <div class="bento-card large fade-in-up">
+      <div class="content">
+        <h3>Regent College</h3>
+        <p class="text-base"><a href="https://www.regent-college.edu">www.regent-college.edu</a></p>
+      </div>
+      <!-- Placeholder for image -->
+      <div class="mt-5 h-52 bg-white rounded-2xl overflow-hidden">
+        <img src="./src/assets/Regent.png" alt="" class="w-full h-full object-contain">
       </div>
     </div>
-  </section>
 
-  <section id="about">
-    <div class="container fade-in-up">
-      <div style="background: var(--bg-secondary); border-radius: 30px; padding: 60px; text-align: center;">
-        <h2 style="font-size: 40px; margin-bottom: 20px;">About Me</h2>
-        <p style="max-width: 800px;">
-          I care about who you are and what you want to achieve. I'm here to help you make your vision a reality.
-        </p>
+    <div class="bento-card fade-in-up">
+      <div class="content">
+        <h3>Signado</h3>
+        <p class="text-base">Real-time translation from ASL to text on screen.</p>
+      </div>
+      <div class="mt-5 h-52 bg-white rounded-2xl overflow-hidden">
+        <img src="./src/assets/Signado.png" alt="" class="w-full h-full object-contain">
       </div>
     </div>
-  </section>
 
-  <section id="contact">
-    <div class="container fade-in-up" style="text-align: center;">
-      <h2 style="font-size: 40px; margin-bottom: 20px;">Let's work together.</h2>
-      <p>Have a project in mind? I'd love to hear from you.</p>
-      <a href="mailto:william.chau715@gmail.com" class="cta-button">Get in Touch</a>
+    <div class="bento-card fade-in-up">
+      <div class="content">
+        <h3>ViaPlanner</h3>
+        <p class="text-base">Sort your timetable automatically.</p>
+      </div>
+      <div class="mt-5 h-52 bg-white rounded-2xl overflow-hidden flex flex-row">
+        <img src="./src/assets/Viaplanner.png" alt="" class="w-1/2 h-1/2 object-contain">
+        <img src="./src/assets/Timetable.png" alt="" class="w-full h-full object-contain rounded-2xl">
+      </div>
     </div>
-  </section>
+
+
+  </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container fade-in-up">
+  <div class="bg-secondary rounded-3xl p-16 text-center">
+    <h2 class="text-4xl mb-5">About Me</h2>
+    <p class="max-w-3xl">
+      Hi, I'm William. <br />
+      I believe a website should be a clear window into your work, not a barrier. <br />
+      I focus on building clean, effective digital spaces that help people understand who you are the moment they land on your page. <br />
+      You bring the vision; I'll handle the code to make it a reality.
+    </p>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container fade-in-up text-center">
+  <h2 class="text-4xl mb-5">Let's work together.</h2>
+  <p>Have a project in mind? I'd love to hear from you.</p>
+  <a href="mailto:william.chau715@gmail.com" class="cta-button">Get in Touch</a>
+</div>
+</section>
 </main>
 
 <footer>
-  <div class="container">
-    <p style="font-size: 12px;">&copy; 2025 William Chau. All rights reserved.</p>
-  </div>
+<div class="container">
+<p class="text-xs">&copy; 2025 William Chau. All rights reserved.</p>
+</div>
 </footer>
 
 <script type="module" src="/src/main.js"></script>

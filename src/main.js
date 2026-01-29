@@ -1,5 +1,3 @@
-import './style.css'
-
 // Scroll Animation Observer
 const observerOptions = {
   root: null,
